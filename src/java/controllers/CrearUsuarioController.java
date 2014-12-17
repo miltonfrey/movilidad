@@ -28,7 +28,7 @@ public class CrearUsuarioController implements Serializable{
     private beanUtilidades beanUtilidades;
     
     @ManagedProperty(value="#{usuarioService}")  
-    private transient UsuarioService usuarioService;
+    private UsuarioService usuarioService;
     
     private String login;
     private String password;
@@ -52,6 +52,7 @@ public class CrearUsuarioController implements Serializable{
         aux.add("MUEI");
         setListaTitulaciones(aux);
     }
+    
     
 
     public beanUtilidades getBeanUtilidades() {
@@ -156,13 +157,6 @@ public class CrearUsuarioController implements Serializable{
     
     
     public String creaUsuario(){
-        
-        if(getPassword().equals(getPasswordAux())==false){
-            
-            beanUtilidades.creaMensaje("los password no coinciden", FacesMessage.SEVERITY_ERROR);
-            return null;
-        }
-        
         
         
         Usuario u=new Usuario();

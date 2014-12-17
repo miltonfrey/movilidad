@@ -27,7 +27,7 @@ public class EscribeMensajeController implements Serializable{
     
     @ManagedProperty(value="#{mensajeService}")
     private MensajeService mensajeService;
-    @ManagedProperty(value="#{mensajeService}")
+    @ManagedProperty(value="#{usuarioService}")
     private UsuarioService usuarioService;
     
     private Usuario user;

@@ -114,14 +114,14 @@ public class MensajeServiceImpl implements MensajeService{
 
 
     @Override
-    @Transactional(readOnly = true)
     public void leerMensajeRecibido(Mensaje selectedMensajeRecibido){
 
             Mensaje aux=find(selectedMensajeRecibido.getIdmensaje());
             
+            
             if(aux!=null){
             aux.setLeidoDestino("si");
-            enviarMensaje(aux);
+                enviarMensaje(aux);
             
         
             }
