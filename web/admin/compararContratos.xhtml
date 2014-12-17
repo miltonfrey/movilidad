@@ -15,14 +15,14 @@
         <p:panel id="headerContratos">
         
             <h:outputLabel value="Contratos de: "/>
-            <h:outputText value="#{equivalenciasController.selectedMovilidad.loginUsuario.nombre }"/>
+            <h:outputText value="#{equivalenciasController.selectedMovilidad.usuario.nombre }"/>
             
-            <h:outputText value=" #{equivalenciasController.selectedMovilidad.loginUsuario.apellido1}"/>
+            <h:outputText value=" #{equivalenciasController.selectedMovilidad.usuario.apellido1}"/>
             <br/>
             <h:outputLabel value="país: "/>
-            <h:outputText value="#{equivalenciasController.selectedMovilidad.nombreUniversidad.pais.nombre}"/><br/>
+            <h:outputText value="#{equivalenciasController.selectedMovilidad.universidad.pais.nombre}"/><br/>
             <h:outputLabel value="Universidad: "/>
-            <h:outputText value=" #{equivalenciasController.selectedMovilidad.nombreUniversidad.nombre} "/>
+            <h:outputText value=" #{equivalenciasController.selectedMovilidad.universidad.nombre} "/>
             <br/>
             <p:outputLabel value="inicio: "/>
             <h:outputText value="#{equivalenciasController.selectedMovilidad.fechaInicio}">
@@ -59,7 +59,7 @@
                 </f:facet>
                 
                 <p:column headerText="UDC" styleClass="nuevoAsignaturaAdmin">
-                    <ui:repeat value="#{equivalencia.equivalencia.miembroGrupoAsignaturaASet.toArray()}" var="asignatura">
+                    <ui:repeat value="#{equivalencia.equivalencia.miembroGrupoAsignaturaAs.toArray()}" var="asignatura">
                         <h:outputLink target="_blank" value="#{asignatura.asignatura.webAsignatura}" rendered="#{not empty asignatura.asignatura.webAsignatura}">#{asignatura.asignatura.nombreAsignatura}</h:outputLink>
                         <h:outputText value="#{asignatura.asignatura.nombreAsignatura}" rendered="#{empty asignatura.asignatura.webAsignatura}"/>
                         <br/>
@@ -67,7 +67,7 @@
                 </p:column>
                    
                 <p:column headerText="Cr" styleClass="nuevoCreditosAdmin">
-                    <ui:repeat value="#{equivalencia.equivalencia.miembroGrupoAsignaturaASet.toArray()}" var="asignatura">
+                    <ui:repeat value="#{equivalencia.equivalencia.miembroGrupoAsignaturaAs.toArray()}" var="asignatura">
                         <h:outputText value="#{asignatura.asignatura.creditos}"/>
                         <br/>
                     </ui:repeat>
@@ -75,7 +75,7 @@
                        
                    
                 <p:column headerText="P" styleClass="nuevoPeriodoAdmin">
-                    <ui:repeat value="#{equivalencia.equivalencia.miembroGrupoAsignaturaASet.toArray()}" var="asignatura">
+                    <ui:repeat value="#{equivalencia.equivalencia.miembroGrupoAsignaturaAs.toArray()}" var="asignatura">
                          <h:outputText value="A"  rendered="#{asignatura.asignatura.periodo eq 'anual'}"/>
                          <h:outputText value="P"  rendered="#{asignatura.asignatura.periodo eq 'primavera'}"/>
                          <h:outputText value="I"  rendered="#{asignatura.asignatura.periodo eq 'invierno'}"/>
@@ -84,8 +84,8 @@
                 </p:column>
                        
                 
-                   <p:column headerText="#{equivalenciasController.selectedMovilidad.nombreUniversidad.nombre}" styleClass="nuevoAsignaturaAdmin">
-                       <ui:repeat value="#{equivalencia.equivalencia.miembroGrupoAsignaturaBSet.toArray()}" var="asignatura">
+                   <p:column headerText="#{equivalenciasController.selectedMovilidad.universidad.nombre}" styleClass="nuevoAsignaturaAdmin">
+                       <ui:repeat value="#{equivalencia.equivalencia.miembroGrupoAsignaturaBs.toArray()}" var="asignatura">
                         <h:outputLink target="_blank" value="#{asignatura.asignatura.webAsignatura}" rendered="#{ not empty asignatura.asignatura.webAsignatura}">#{asignatura.asignatura.nombreAsignatura}</h:outputLink>
                          <h:outputText value="#{asignatura.asignatura.nombreAsignatura}" rendered="#{empty asignatura.asignatura.webAsignatura}"/>
                          <br/>
@@ -93,7 +93,7 @@
                 </p:column>
                    
                     <p:column headerText="Cr" styleClass="nuevoCreditosAdmin">
-                        <ui:repeat value="#{equivalencia.equivalencia.miembroGrupoAsignaturaBSet.toArray()}" var="asignatura">
+                        <ui:repeat value="#{equivalencia.equivalencia.miembroGrupoAsignaturaBs.toArray()}" var="asignatura">
                         <h:outputText value="#{asignatura.asignatura.creditos}"/>
                         <br/>
                     </ui:repeat>
@@ -101,7 +101,7 @@
                        
                    
                 <p:column headerText="P" styleClass="nuevoPeriodoAdmin">
-                    <ui:repeat value="#{equivalencia.equivalencia.miembroGrupoAsignaturaBSet.toArray()}" var="asignatura">
+                    <ui:repeat value="#{equivalencia.equivalencia.miembroGrupoAsignaturaBs.toArray()}" var="asignatura">
                          <h:outputText value="A"  rendered="#{asignatura.asignatura.periodo eq 'anual'}"/>
                          <h:outputText value="P"  rendered="#{asignatura.asignatura.periodo eq 'primavera'}"/>
                          <h:outputText value="I"  rendered="#{asignatura.asignatura.periodo eq 'invierno'}"/>
@@ -160,7 +160,7 @@
                     </h:outputText>
                 </f:facet>
                   <p:column headerText="UDC" styleClass="nuevoAsignaturaAdmin">
-                      <ui:repeat value="#{equivalenciaB.equivalencia.miembroGrupoAsignaturaASet.toArray()}" var="asignatura">
+                      <ui:repeat value="#{equivalenciaB.equivalencia.miembroGrupoAsignaturaAs.toArray()}" var="asignatura">
                         <h:outputLink target="_blank" value="#{asignatura.asignatura.webAsignatura}" rendered="#{not empty asignatura.asignatura.webAsignatura}">#{asignatura.asignatura.nombreAsignatura}</h:outputLink>
                         <h:outputText value="#{asignatura.asignatura.nombreAsignatura}" rendered="#{empty asignatura.asignatura.webAsignatura}"/>
                         <br/>
@@ -168,7 +168,7 @@
                 </p:column>
                    
                 <p:column headerText="Cr" styleClass="nuevoCreditosAdmin">
-                    <ui:repeat value="#{equivalenciaB.equivalencia.miembroGrupoAsignaturaASet.toArray()}" var="asignatura">
+                    <ui:repeat value="#{equivalenciaB.equivalencia.miembroGrupoAsignaturaAs.toArray()}" var="asignatura">
                         <h:outputText value="#{asignatura.asignatura.creditos}"/>
                         <br/>
                     </ui:repeat>
@@ -176,7 +176,7 @@
                        
                    
                 <p:column headerText="P" styleClass="nuevoPeriodoAdmin">
-                    <ui:repeat value="#{equivalenciaB.equivalencia.miembroGrupoAsignaturaASet.toArray()}" var="asignatura">
+                    <ui:repeat value="#{equivalenciaB.equivalencia.miembroGrupoAsignaturaAs.toArray()}" var="asignatura">
                          <h:outputText value="A"  rendered="#{asignatura.asignatura.periodo eq 'anual'}"/>
                          <h:outputText value="P"  rendered="#{asignatura.asignatura.periodo eq 'primavera'}"/>
                          <h:outputText value="I"  rendered="#{asignatura.asignatura.periodo eq 'invierno'}"/>
@@ -185,8 +185,8 @@
                 </p:column>
                        
                 
-                <p:column headerText="#{equivalenciasController.selectedMovilidad.nombreUniversidad.nombre}" styleClass="nuevoAsignaturaAdmin">
-                    <ui:repeat value="#{equivalenciaB.equivalencia.miembroGrupoAsignaturaBSet.toArray()}" var="asignatura">
+                <p:column headerText="#{equivalenciasController.selectedMovilidad.universidad.nombre}" styleClass="nuevoAsignaturaAdmin">
+                    <ui:repeat value="#{equivalenciaB.equivalencia.miembroGrupoAsignaturaBs.toArray()}" var="asignatura">
                         <h:outputLink target="_blank" value="#{asignatura.asignatura.webAsignatura}" rendered="#{ not empty asignatura.asignatura.webAsignatura}">#{asignatura.asignatura.nombreAsignatura}</h:outputLink>
                          <h:outputText value="#{asignatura.asignatura.nombreAsignatura}" rendered="#{empty asignatura.asignatura.webAsignatura}"/>
                          <br/>
@@ -194,7 +194,7 @@
                 </p:column>
                    
                     <p:column headerText="Cr" styleClass="nuevoCreditosAdmin">
-                        <ui:repeat value="#{equivalenciaB.equivalencia.miembroGrupoAsignaturaBSet.toArray()}" var="asignatura">
+                        <ui:repeat value="#{equivalenciaB.equivalencia.miembroGrupoAsignaturaBs.toArray()}" var="asignatura">
                         <h:outputText value="#{asignatura.asignatura.creditos}"/>
                         <br/>
                     </ui:repeat>
@@ -202,7 +202,7 @@
                        
                    
                 <p:column headerText="P" styleClass="nuevoPeriodoAdmin">
-                    <ui:repeat value="#{equivalenciaB.equivalencia.miembroGrupoAsignaturaBSet.toArray()}" var="asignatura">
+                    <ui:repeat value="#{equivalenciaB.equivalencia.miembroGrupoAsignaturaBs.toArray()}" var="asignatura">
                          <h:outputText value="A"  rendered="#{asignatura.asignatura.periodo eq 'anual'}"/>
                          <h:outputText value="P"  rendered="#{asignatura.asignatura.periodo eq 'primavera'}"/>
                          <h:outputText value="I"  rendered="#{asignatura.asignatura.periodo eq 'invierno'}"/>
