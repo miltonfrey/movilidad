@@ -1,7 +1,8 @@
 
  
 
-package dao;
+package model.dao;
+
 
 import entities.Asignatura;
 import java.io.Serializable;

@@ -16,9 +16,8 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
-import services.EquivalenciaService;
-import services.MovilidadService;
-import utils.beanUtilidades;
+import model.services.EquivalenciaService;
+import model.utils.beanUtilidades;
 
 
 @ManagedBean
@@ -246,7 +245,7 @@ public class VerMisContratosController implements Serializable{
         FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("contrato", selectedContrato);
        
         
-        return ("elaborarContratoEditadoB.xhtml?faces-redirect=true");
+        return ("elaborarContratoEditado.xhtml?faces-redirect=true");
         
     }
     

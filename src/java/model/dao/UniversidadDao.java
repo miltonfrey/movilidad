@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 
-package dao;
+package model.dao;
+
 
 import entities.Cursoacademico;
 import entities.Pais;

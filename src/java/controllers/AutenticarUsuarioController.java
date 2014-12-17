@@ -14,8 +14,8 @@ import javax.servlet.http.HttpSession;
 
 
 
-import services.UsuarioService;
-import utils.beanUtilidades;
+import model.services.UsuarioService;
+import model.utils.beanUtilidades;
 
 
 @ManagedBean
@@ -23,7 +23,7 @@ import utils.beanUtilidades;
 public class AutenticarUsuarioController implements Serializable{
 
      @ManagedProperty(value="#{beanUtilidades}")
-    private beanUtilidades beanUtilidades;
+    private transient beanUtilidades beanUtilidades;
     
     @ManagedProperty(value="#{usuarioService}")  
     private transient UsuarioService usuarioService;
@@ -42,7 +42,7 @@ public class AutenticarUsuarioController implements Serializable{
         return beanUtilidades;
     }
 
-    public void setBeanUtilidades(beanUtilidades beanUtilidades) {
+   public void setBeanUtilidades(beanUtilidades beanUtilidades) {
         this.beanUtilidades = beanUtilidades;
     }
 
@@ -99,10 +99,10 @@ public class AutenticarUsuarioController implements Serializable{
              try{
              u=usuarioService.find(getLogin());
              }catch(UsuarioNotFoundException ex){
-              beanUtilidades.creaMensaje("login inexistente", FacesMessage.SEVERITY_ERROR);
+             beanUtilidades.creaMensaje("login inexistente", FacesMessage.SEVERITY_ERROR);
               return null; 
              }
-             
+             System.out.println("hola");
              
             try{ 
             usuarioService.autenticarUsuario(password,u);

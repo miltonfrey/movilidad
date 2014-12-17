@@ -12,9 +12,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import org.apache.commons.mail.EmailException;
-import services.MensajeService;
-import services.UsuarioService;
-import utils.beanUtilidades;
+import model.services.MensajeService;
+import model.services.UsuarioService;
+import model.utils.beanUtilidades;
 
 
 @ManagedBean
@@ -202,7 +202,7 @@ public class CrearUsuarioController implements Serializable{
         beanUtilidades.creaMensaje("usuario creado. Se ha enviado un correo a la cuenta "+login+"@udc.es con la contraseña", FacesMessage.SEVERITY_INFO);
         
         
-        Usuario destino=null;
+        Usuario destino;
         try{
             
             destino=usuarioService.find("admin");

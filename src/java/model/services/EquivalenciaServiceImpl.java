@@ -1,8 +1,8 @@
 
 
-package services;
+package model.services;
 
-import dao.EquivalenciaDao;
+
 import entities.Asignatura;
 import entities.Contrato;
 import entities.Equivalencia;
@@ -17,12 +17,13 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import model.dao.EquivalenciaDao;
 
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import utils.EquivalenciaRevisada;
+import model.utils.EquivalenciaRevisada;
 
 
 

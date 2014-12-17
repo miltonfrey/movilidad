@@ -18,9 +18,9 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 import org.primefaces.event.RowEditEvent;
-import services.MensajeService;
-import services.MovilidadService;
-import utils.beanUtilidades;
+import model.services.MensajeService;
+import model.services.MovilidadService;
+import model.utils.beanUtilidades;
 
 
 

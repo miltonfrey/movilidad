@@ -23,7 +23,7 @@
             <p:dataTable id="tablaFic" value="#{misEquivalenciasController.listaAsignaturasFic}" var="asigFic" rows="10"
                          emptyMessage="no hay asignaturas"
                          widgetVar="asigFicBtn"
-                         rowKey="#{asigFic.asignaturaPK.codAsignatura}"
+                         rowKey="#{asigFic.id.codAsignatura}"
                          selection="#{misEquivalenciasController.selectedAsignaturasFic}"               
                          paginator="true"
                          styleClass="tablaFic"
@@ -90,13 +90,13 @@
                          widgetVar="asigUniBtn"
                          selection="#{misEquivalenciasController.selectedAsignaturasUni}"
                          filteredValue="#{misEquivalenciasController.filteredAsignaturasUni}"
-                         rowKey="#{asigUni.asignaturaPK.codAsignatura}"
+                         rowKey="#{asigUni.id.codAsignatura}"
                          paginator="true"
                          rows="10"
                          styleClass="tablaUniversidad" 
                          >
                 
-                <f:facet name="header">DESTINO: #{misEquivalenciasController.selectedMovilidad.nombreUniversidad.nombre}</f:facet>
+                <f:facet name="header">DESTINO: #{misEquivalenciasController.selectedMovilidad.universidad.nombre}</f:facet>
                 
                 <p:column headerText="asignatura" sortBy="#{asigUni.nombreAsignatura}"  filterBy="#{asigUni.nombreAsignatura}" styleClass="asignatura">
                     <h:outputLink target="_blank" value="#{asigUni.webAsignatura}" rendered="#{not empty asigUni.webAsignatura}">#{asigUni.nombreAsignatura}</h:outputLink>
@@ -164,28 +164,28 @@
                 
                 
                 <p:column headerText="UDC" styleClass="asignatura">
-                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaASet.toArray()}" var="asignatura">
+                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaAs.toArray()}" var="asignatura">
                         <h:outputText value="#{asignatura.asignatura.nombreAsignatura}"/>
                         <br/>
                     </ui:repeat>
                 </p:column>
                 
                 <p:column headerText="Cr" styleClass="creditos">
-                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaASet.toArray()}" var="asignatura">
+                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaAs.toArray()}" var="asignatura">
                         <h:outputText value="#{asignatura.asignatura.creditos}"/>
                         <br/>
                     </ui:repeat>
                 </p:column>
                 
-                <p:column headerText="#{misEquivalenciasController.selectedMovilidad.nombreUniversidad.nombre}" styleClass="asignatura">
-                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaBSet.toArray()}" var="asignatura">
+                <p:column headerText="#{misEquivalenciasController.selectedMovilidad.universidad.nombre}" styleClass="asignatura">
+                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaBs.toArray()}" var="asignatura">
                         <h:outputText value="#{asignatura.asignatura.nombreAsignatura} "/>
                         
                         <br/>
                     </ui:repeat>
                 </p:column>
                 <p:column headerText="Cr" styleClass="creditos">
-                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaBSet.toArray()}" var="asignatura">
+                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaBs.toArray()}" var="asignatura">
                         <h:outputText value="#{asignatura.asignatura.creditos} "/>
                         
                         <br/>
@@ -223,21 +223,21 @@
                 
                 
                 <p:column headerText="UDC" styleClass="nuevoAsignatura">
-                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaASet.toArray()}" var="asignatura">
+                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaAs.toArray()}" var="asignatura">
                         <h:outputText value="#{asignatura.asignatura.nombreAsignatura}"/>
                         <br/>
                     </ui:repeat>
                 </p:column>
                 
                 <p:column headerText="Cr" styleClass="nuevoCreditos">
-                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaASet.toArray()}" var="asignatura">
+                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaAs.toArray()}" var="asignatura">
                         <h:outputText value="#{asignatura.asignatura.creditos}"/>
                         <br/>
                     </ui:repeat>
                 </p:column>
                 
-                <p:column headerText="#{misEquivalenciasController.selectedMovilidad.nombreUniversidad.nombre}" styleClass="nuevoAsignatura">
-                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaBSet.toArray()}" var="asignatura">
+                <p:column headerText="#{misEquivalenciasController.selectedMovilidad.universidad.nombre}" styleClass="nuevoAsignatura">
+                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaBs.toArray()}" var="asignatura">
                         <h:outputText value="#{asignatura.asignatura.nombreAsignatura} "/>
                         
                         <br/>
@@ -245,7 +245,7 @@
                 </p:column>
                 
                 <p:column headerText="Cr" styleClass="nuevoCreditos">
-                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaBSet.toArray()}" var="asignatura">
+                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaBs.toArray()}" var="asignatura">
                         <h:outputText value="#{asignatura.asignatura.creditos} "/>
                         
                         <br/>

@@ -11,8 +11,8 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
-import services.UniversidadService;
-import utils.beanUtilidades;
+import model.services.UniversidadService;
+import model.utils.beanUtilidades;
 
 
 @ManagedBean
@@ -51,6 +51,7 @@ public class CrearUniversidadController implements Serializable{
     private ArrayList<Pais> listaPaises;
     private ArrayList<Universidad> listaUniversidades;
     private ArrayList<Universidad> selectedUniversidades;
+    private ArrayList<Universidad> filteredUniversidades;
     
     private boolean checkPaisStr;
     private boolean checkUniversidadStr;
@@ -171,6 +172,16 @@ public class CrearUniversidadController implements Serializable{
     public void setSelectedUniversidades(ArrayList<Universidad> selectedUniversidades) {
         this.selectedUniversidades = selectedUniversidades;
     }
+
+    public ArrayList<Universidad> getFilteredUniversidades() {
+        return filteredUniversidades;
+    }
+
+    public void setFilteredUniversidades(ArrayList<Universidad> filteredUniversidades) {
+        this.filteredUniversidades = filteredUniversidades;
+    }
+    
+    
 
    //BOOLEAN 
 

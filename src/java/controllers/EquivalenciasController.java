@@ -21,13 +21,10 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
-import services.AsignaturaService;
-import services.EquivalenciaService;
-import services.MensajeService;
-import services.MovilidadService;
-import services.UsuarioService;
-import utils.EquivalenciaRevisada;
-import utils.beanUtilidades;
+import model.services.EquivalenciaService;
+import model.services.MensajeService;
+import model.utils.EquivalenciaRevisada;
+import model.utils.beanUtilidades;
 
 
 /**
@@ -283,6 +280,14 @@ public class EquivalenciasController implements Serializable{
 
     public void setSelectedEquivalenciasSimples(ArrayList<Equivalencia> selectedEquivalenciasSimples) {
         this.selectedEquivalenciasSimples = selectedEquivalenciasSimples;
+    }
+
+    public Usuario getUser() {
+        return user;
+    }
+
+    public void setUser(Usuario user) {
+        this.user = user;
     }
     
     

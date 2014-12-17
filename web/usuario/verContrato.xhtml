@@ -39,7 +39,7 @@
                 
                 
                 <p:column headerText="UDC" styleClass="verAsignatura">
-                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaASet.toArray()}" var="asignatura">
+                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaAs.toArray()}" var="asignatura">
                         <h:outputLink target="_blank" value="#{asignatura.asignatura.webAsignatura}" rendered="#{ not empty asignatura.asignatura.webAsignatura}">#{asignatura.asignatura.nombreAsignatura}</h:outputLink>
                          <h:outputText value="#{asignatura.asignatura.nombreAsignatura}" rendered="#{empty asignatura.asignatura.webAsignatura}"/>
                          <br/>
@@ -47,21 +47,21 @@
                 </p:column>
                 
                 <p:column headerText="Cr" styleClass="verCreditos">
-                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaASet.toArray()}" var="asignatura">
+                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaAs.toArray()}" var="asignatura">
                         <h:outputText value="#{asignatura.asignatura.creditos}"/>
                         <br/>
                     </ui:repeat>
                 </p:column>
                 
                 <p:column headerText="Periodo" styleClass="verPeriodo">
-                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaASet.toArray()}" var="asignatura">
+                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaAs.toArray()}" var="asignatura">
                         <h:outputText value="#{asignatura.asignatura.periodo}"/>
                         <br/>
                     </ui:repeat>
                 </p:column>
                 
-                <p:column headerText="#{misEquivalenciasController.selectedMovilidad.nombreUniversidad.nombre}" styleClass="verAsignatura">
-                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaBSet.toArray()}" var="asignatura">
+                <p:column headerText="#{misEquivalenciasController.selectedMovilidad.universidad.nombre}" styleClass="verAsignatura">
+                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaBs.toArray()}" var="asignatura">
                        <h:outputLink target="_blank" value="#{asignatura.asignatura.webAsignatura}" rendered="#{ not empty asignatura.asignatura.webAsignatura}">#{asignatura.asignatura.nombreAsignatura}</h:outputLink>
                          <h:outputText value="#{asignatura.asignatura.nombreAsignatura}" rendered="#{empty asignatura.asignatura.webAsignatura}"/>
                          <br/>
@@ -70,7 +70,7 @@
                 </p:column>
                 
                 <p:column headerText="Cr" styleClass="verCreditos">
-                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaBSet.toArray()}" var="asignatura">
+                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaBs.toArray()}" var="asignatura">
                         <h:outputText value="#{asignatura.asignatura.creditos} "/>
                         
                         <br/>
@@ -79,7 +79,7 @@
                 </p:column>
                 
                 <p:column headerText="Periodo" styleClass="verPeriodo">
-                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaBSet.toArray()}" var="asignatura">
+                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaBs.toArray()}" var="asignatura">
                         <h:outputText value="#{asignatura.asignatura.periodo} "/>
                         
                         <br/>

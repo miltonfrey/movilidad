@@ -14,7 +14,7 @@
         <many-to-one name="universidad" class="entities.Universidad" fetch="select">
             <column name="nombreUniversidad" length="45" not-null="true" />
         </many-to-one>
-        <many-to-one name="usuario" class="entities.Usuario" fetch="select">
+        <many-to-one name="usuario" class="entities.Usuario" fetch="select" lazy="false">
             <column name="loginUsuario" length="20" not-null="true" />
         </many-to-one>
         <property name="fechaInicio" type="timestamp">
@@ -26,7 +26,7 @@
         <property name="estado" type="string">
             <column name="estado" length="10" not-null="true" />
         </property>
-        <set name="contratos" table="contrato" inverse="true" lazy="true" fetch="select">
+        <set name="contratos" table="contrato" cascade="delete" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="idMovilidad" />
             </key>

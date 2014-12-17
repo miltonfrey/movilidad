@@ -12,9 +12,9 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
-import services.MensajeService;
-import services.UsuarioService;
-import utils.beanUtilidades;
+import model.services.MensajeService;
+import model.services.UsuarioService;
+import model.utils.beanUtilidades;
 
 
 @ManagedBean

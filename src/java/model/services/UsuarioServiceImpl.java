@@ -4,15 +4,16 @@
  * and open the template in the editor.
  */
 
-package services;
+package model.services;
 
-import dao.UsuarioDao;
+
 import entities.Usuario;
 import exceptions.PasswordIncorrectoException;
 import exceptions.UsuarioNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import model.dao.UsuarioDao;
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.EmailException;

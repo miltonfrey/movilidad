@@ -19,9 +19,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
-import services.EquivalenciaService;
-import services.UniversidadService;
-import utils.beanUtilidades;
+import model.services.EquivalenciaService;
+import model.services.UniversidadService;
+import model.utils.beanUtilidades;
 
 
 

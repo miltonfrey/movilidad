@@ -1,6 +1,6 @@
-package services;
+package model.services;
 
-import dao.UniversidadDao;
+
 import entities.Cursoacademico;
 import entities.Pais;
 import entities.Universidad;
@@ -10,6 +10,7 @@ import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import model.dao.UniversidadDao;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
@@ -62,8 +63,7 @@ public class UniversidadServiceImpl implements UniversidadService,Serializable{
         
         Pais p=new Pais(pais);
         universidadDao.insertarPais(p);
-        Pais p2=new Pais("Camerún");
-        universidadDao.insertarPais(p2);
+        
             
         
     }

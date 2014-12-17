@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package services;
+package model.services;
 
 import entities.Mensaje;
 import java.util.List;

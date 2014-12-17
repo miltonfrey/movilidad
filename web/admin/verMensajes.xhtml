@@ -24,16 +24,16 @@
                          
                <f:facet name="header">Mensajes recibidos</f:facet>
                 
-               <p:column headerText="Login:" sortBy="#{mensaje.origen.login}" filterBy="#{mensaje.origen.login}">
-                   <h:outputText value="#{mensaje.origen.login}"/>
+               <p:column headerText="Login:" sortBy="#{mensaje.usuarioByOrigen.login}" filterBy="#{mensaje.usuarioByOrigen.login}">
+                   <h:outputText value="#{mensaje.usuarioByOrigen.login}"/>
                </p:column>
                     
-               <p:column headerText="Nombre:" sortBy="#{mensaje.origen.nombre}">
-                   <h:outputText value="#{mensaje.origen.nombre}"/>
+               <p:column headerText="Nombre:" sortBy="#{mensaje.usuarioByOrigen.nombre}">
+                   <h:outputText value="#{mensaje.usuarioByOrigen.nombre}"/>
                </p:column>
                
-               <p:column headerText="apellido" sortBy="#{mensaje.origen.apellido1}" filterBy="#{mensaje.origen.apellido1}">
-                   <h:outputText value="#{mensaje.origen.apellido1}"/>
+               <p:column headerText="apellido" sortBy="#{mensaje.usuarioByOrigen.apellido1}" filterBy="#{mensaje.usuarioByOrigen.apellido1}">
+                   <h:outputText value="#{mensaje.usuarioByOrigen.apellido1}"/>
                </p:column>
                
                       <p:column headerText="asunto">
@@ -108,16 +108,16 @@
                         
                          <f:facet name="header">Mensajes enviados</f:facet>
                          
-                         <p:column headerText="login" sortBy="#{mensaje.destino.login}" filterBy="#{mensaje.destino.login}">
-                             <h:outputText value="#{mensaje.destino.login}"/>
+                         <p:column headerText="login" sortBy="#{mensaje.usuarioByDestino.login}" filterBy="#{mensaje.usuarioByDestino.login}">
+                             <h:outputText value="#{mensaje.usuarioByDestino.login}"/>
                          </p:column>
                          
-                         <p:column headerText="nombre" sortBy="#{mensaje.destino.nombre}">
-                             <h:outputText value="#{mensaje.destino.nombre}"/>
+                         <p:column headerText="nombre" sortBy="#{mensaje.usuarioByDestino.nombre}">
+                             <h:outputText value="#{mensaje.usuarioByDestino.nombre}"/>
                          </p:column>
                          
-                         <p:column headerText="apellido" sortBy="#{mensaje.destino.apellido1}" filterBy="#{mensaje.destino.apellido1}">
-                             <h:outputText value="#{mensaje.destino.apellido1}"/>
+                         <p:column headerText="apellido" sortBy="#{mensaje.usuarioByDestino.apellido1}" filterBy="#{mensaje.usuarioByDestino.apellido1}">
+                             <h:outputText value="#{mensaje.usuarioByDestino.apellido1}"/>
                          </p:column>
                          
                          <p:column headerText="asunto">

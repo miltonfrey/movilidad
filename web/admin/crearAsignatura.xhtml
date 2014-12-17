@@ -101,7 +101,7 @@
                              paginator="true"
                              widgetVar="asignaturaBtn"
                              selection="#{crearAsignaturaController.selectedAsignaturas}"
-                             rowKey="#{asignatura.asignaturaPK.codAsignatura}"
+                             rowKey="#{asignatura.id}"
                              rendered="#{crearAsignaturaController.checkTabla}"
                              filteredValue="#{crearAsignaturaController.filteredAsignaturas}"
                              
@@ -116,9 +116,9 @@
                         
                     </f:facet>
                 
-                    <p:column headerText="código" sortBy="#{asignatura.asignaturaPK.codAsignatura}" styleClass="codAsignatura">
+                    <p:column headerText="código" sortBy="#{asignatura.id.codAsignatura}" styleClass="codAsignatura">
                         
-                        <h:outputText value="#{asignatura.asignaturaPK.codAsignatura}"/>
+                        <h:outputText value="#{asignatura.id.codAsignatura}"/>
                         
                     </p:column>
                 

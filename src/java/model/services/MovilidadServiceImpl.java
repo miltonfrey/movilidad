@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-package services;
+package model.services;
 
-import dao.MovilidadDao;
+
 import entities.Cursoacademico;
 import entities.Movilidad;
 import entities.Universidad;
@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import model.dao.MovilidadDao;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

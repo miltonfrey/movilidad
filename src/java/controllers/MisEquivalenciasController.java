@@ -32,12 +32,12 @@ import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 import org.primefaces.component.datatable.DataTable;
-import services.AsignaturaService;
-import services.EquivalenciaService;
-import services.MensajeService;
-import services.MovilidadService;
-import services.UsuarioService;
-import utils.beanUtilidades;
+import model.services.AsignaturaService;
+import model.services.EquivalenciaService;
+import model.services.MensajeService;
+import model.services.MovilidadService;
+import model.services.UsuarioService;
+import model.utils.beanUtilidades;
 
 
 /**

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package utils;
+package model.utils;
 
 
 import entities.Cursoacademico;
@@ -28,7 +28,7 @@ import javax.servlet.http.HttpSession;
 public class beanUtilidades implements Serializable{
 
     @ManagedProperty(value="#{utilidadService}")
-    private transient UtilidadService utilidadService;
+    private UtilidadService utilidadService;
 
     public UtilidadService getUtilidadService() {
         return utilidadService;

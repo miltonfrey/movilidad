@@ -1,6 +1,7 @@
 
 
-package dao;
+package model.dao;
+
 
 
 import entities.Contrato;

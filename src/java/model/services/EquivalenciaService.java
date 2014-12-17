@@ -1,6 +1,6 @@
 
 
-package services;
+package model.services;
 
 import entities.Contrato;
 import entities.Equivalencia;
@@ -11,7 +11,7 @@ import exceptions.MovilidadNotFoundException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import utils.EquivalenciaRevisada;
+import model.utils.EquivalenciaRevisada;
 
 
 

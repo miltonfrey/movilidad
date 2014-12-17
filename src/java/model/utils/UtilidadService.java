@@ -1,5 +1,5 @@
 
-package utils;
+package model.utils;
 
 import entities.Cursoacademico;
 import entities.Estado;

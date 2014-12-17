@@ -17,9 +17,9 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
-import services.EquivalenciaService;
-import services.MovilidadService;
-import utils.beanUtilidades;
+import model.services.EquivalenciaService;
+import model.services.MovilidadService;
+import model.utils.beanUtilidades;
 
 
 @ManagedBean

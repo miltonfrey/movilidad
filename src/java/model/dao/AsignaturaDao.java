@@ -4,16 +4,14 @@
  * and open the template in the editor.
  */
 
-package services;
+package model.dao;
 
+ 
 import entities.Asignatura;
 import java.util.List;
 
-/**
- *
- * @author abc
- */
-public interface AsignaturaService {
+
+public interface AsignaturaDao{
     
     public void crearAsignatura(Asignatura a);
     public List<Asignatura> listarAsignaturas();

@@ -15,9 +15,9 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
-import services.AsignaturaService;
-import services.UniversidadService;
-import utils.beanUtilidades;
+import model.services.AsignaturaService;
+import model.services.UniversidadService;
+import model.utils.beanUtilidades;
 
 
 @ManagedBean

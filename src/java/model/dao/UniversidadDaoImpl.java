@@ -1,4 +1,5 @@
-package dao;
+package model.dao;
+
 
 import entities.Cursoacademico;
 import entities.Pais;

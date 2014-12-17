@@ -57,7 +57,7 @@
                    
                    <p:column headerText="nombre" styleClass="asignaturaPublica">
                     <f:facet name="header">UDC</f:facet> 
-                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaASet.toArray()}" var="asignatura">
+                    <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaAs.toArray()}" var="asignatura">
                         <h:outputLink target="_blank" value="#{asignatura.asignatura.webAsignatura}" rendered="#{not empty asignatura.asignatura.webAsignatura}">#{asignatura.asignatura.nombreAsignatura}</h:outputLink>
                         <h:outputText value="#{asignatura.asignatura.nombreAsignatura}" rendered="#{empty asignatura.asignatura.webAsignatura}"/>
                         <br/>
@@ -65,7 +65,7 @@
                 </p:column>
                 
                    <p:column headerText="Cr" styleClass="creditosPublica">
-                       <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaASet.toArray()}" var="asignatura">
+                       <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaAs.toArray()}" var="asignatura">
                         
                         <h:outputText value="#{asignatura.asignatura.creditos}"/>
                         <br/>
@@ -73,7 +73,7 @@
                 </p:column>
                    
                     <p:column headerText="periodo" styleClass="periodoPublica">
-                        <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaASet.toArray()}" var="asignatura">
+                        <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaAs.toArray()}" var="asignatura">
                         
                         <h:outputText value="#{asignatura.asignatura.periodo}"/>
                         <br/>
@@ -83,14 +83,14 @@
                    
                    <p:column headerText="#{equivalenciasPublicasController.universidadStr}" styleClass="asignaturaPublica">
                        <f:facet name="header">#{equivalenciasPublicasController.universidadStr}</f:facet>
-                       <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaBSet.toArray()}" var="asignatura">
+                       <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaBs.toArray()}" var="asignatura">
                         <h:outputLink target="_blank" value="#{asignatura.asignatura.webAsignatura}" rendered="#{ not empty asignatura.asignatura.webAsignatura}">#{asignatura.asignatura.nombreAsignatura}</h:outputLink>
                          <h:outputText value="#{asignatura.asignatura.nombreAsignatura}" rendered="#{empty asignatura.asignatura.webAsignatura}"/>
                          <br/>
                     </ui:repeat>
                 </p:column>
                        <p:column headerText="Cr" styleClass="creditosPublica">
-                           <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaBSet.toArray()}" var="asignatura">
+                           <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaBs.toArray()}" var="asignatura">
                         
                         <h:outputText value="#{asignatura.asignatura.creditos}"/>
                         <br/>
@@ -98,7 +98,7 @@
                 </p:column>
                    
                     <p:column headerText="periodo" styleClass="periodoPublica">
-                        <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaBSet.toArray()}" var="asignatura">
+                        <ui:repeat value="#{equivalencia.miembroGrupoAsignaturaBs.toArray()}" var="asignatura">
                         
                         <h:outputText value="#{asignatura.asignatura.periodo}"/>
                         <br/>

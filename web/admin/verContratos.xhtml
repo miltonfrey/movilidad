@@ -16,14 +16,14 @@
         <p:panel id="headerContratos">
         
             <h:outputLabel value="Contratos de: "/>
-            <h:outputText value="#{verContratosController.selectedMovilidad.loginUsuario.nombre }"/>
+            <h:outputText value="#{verContratosController.selectedMovilidad.usuario.nombre }"/>
             
-            <h:outputText value=" #{verContratosController.selectedMovilidad.loginUsuario.apellido1}"/>
+            <h:outputText value=" #{verContratosController.selectedMovilidad.usuario.apellido1}"/>
             <br/>
             <h:outputLabel value="país: "/>
-            <h:outputText value="#{verContratosController.selectedMovilidad.nombreUniversidad.pais.nombre}"/><br/>
+            <h:outputText value="#{verContratosController.selectedMovilidad.universidad.pais.nombre}"/><br/>
             <h:outputLabel value="Universidad: "/>
-            <h:outputText value=" #{verContratosController.selectedMovilidad.nombreUniversidad.nombre} "/>
+            <h:outputText value=" #{verContratosController.selectedMovilidad.universidad.nombre} "/>
             <br/>
             <p:outputLabel value="inicio: "/>
             <h:outputText value="#{verContratosController.selectedMovilidad.fechaInicio}">

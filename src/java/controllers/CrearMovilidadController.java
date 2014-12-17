@@ -22,11 +22,11 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
-import services.MensajeService;
-import services.MovilidadService;
-import services.UniversidadService;
-import services.UsuarioService;
-import utils.beanUtilidades;
+import model.services.MensajeService;
+import model.services.MovilidadService;
+import model.services.UniversidadService;
+import model.services.UsuarioService;
+import model.utils.beanUtilidades;
 
 
 

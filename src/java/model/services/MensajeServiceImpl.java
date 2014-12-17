@@ -4,11 +4,12 @@
  * and open the template in the editor.
  */
 
-package services;
+package model.services;
 
-import dao.MensajeDao;
+
 import entities.Mensaje;
 import java.util.List;
+import model.dao.MensajeDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

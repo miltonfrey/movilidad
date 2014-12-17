@@ -9,8 +9,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import org.springframework.dao.DataAccessException;
-import services.UniversidadService;
-import utils.beanUtilidades;
+import model.services.UniversidadService;
+import model.utils.beanUtilidades;
 
 
 @ManagedBean
