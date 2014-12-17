@@ -259,7 +259,7 @@ public class CrearUniversidadController implements Serializable{
             
         }catch(org.springframework.dao.DataIntegrityViolationException ex){
             beanUtilidades.creaMensaje("ya existe esa universidad", FacesMessage.SEVERITY_ERROR);
-            return "crearUniversidad.xhtml";
+            return null;
         }
         catch(RuntimeException ex){
             beanUtilidades.creaMensaje("se ha producido un error", FacesMessage.SEVERITY_INFO);
@@ -316,17 +316,15 @@ public class CrearUniversidadController implements Serializable{
     public String editar(){
         
         checkDetalles=false;
-        
-           
-                    
+                 
         try{
         universidadService.actualizar(selectedUniversidad);
         listaUniversidades=(ArrayList<Universidad>)universidadService.listarPorPais(paisStr);
         }catch(RuntimeException ex){
             beanUtilidades.creaMensaje("se ha producido un error ", FacesMessage.SEVERITY_ERROR);
             checkDetalles=false;
-            listaUniversidades=(ArrayList<Universidad>)universidadService.listaUniversidades();
-            return null;
+            listaPaises=(ArrayList<Pais>)universidadService.listaPaises();
+            return "crearUniversidad.xhtml?faces-redirect=true";
         }
         beanUtilidades.creaMensaje("edición correcta", FacesMessage.SEVERITY_INFO);
         return null;

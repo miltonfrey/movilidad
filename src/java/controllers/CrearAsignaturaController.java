@@ -366,6 +366,7 @@ public class CrearAsignaturaController implements Serializable{
             asignaturaService.actualizarAsignatura(SelectedAsignatura);
             listaAsignaturas=(ArrayList < Asignatura >)asignaturaService.listarAsignaturasPorUniversidad(universidadStr);
         }catch(RuntimeException ex){
+            beanUtilidades.creaMensaje("se ha producido un error", FacesMessage.SEVERITY_ERROR);
            checkDetalles=false;
         checkUniversidadStr=false;
         checkTabla=false;
