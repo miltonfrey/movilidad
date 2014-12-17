@@ -23,7 +23,7 @@
             </key>
             <one-to-many class="entities.MiembroGrupoAsignaturaA" />
         </set>
-        <set name="contratos" table="contrato_equivalencia" inverse="true" lazy="true" fetch="select">
+        <set name="contratos" table="contrato_equivalencia" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="idEquivalencia" not-null="true" />
             </key>

@@ -10,6 +10,7 @@ import entities.MiembroGrupoAsignaturaA;
 import entities.MiembroGrupoAsignaturaB;
 import entities.Movilidad;
 import exceptions.ContratoNotFoundException;
+import exceptions.EquivalenciaException;
 import exceptions.FechaIncorrectaException;
 import exceptions.MovilidadNotFoundException;
 import java.util.ArrayList;
@@ -446,6 +447,8 @@ public class EquivalenciaServiceImpl implements EquivalenciaService{
         Hibernate.initialize(c.getMovilidad().getUniversidad());
         return c.getMovilidad();
      }
+     
+   
              
     
    

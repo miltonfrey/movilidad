@@ -35,31 +35,31 @@
                 <p:ajax event="rowEdit" listener="#{movilidadesController.onRowEdit}" oncomplete="PF('movTable').unselectAllRows();PF('movTable').filter();" update=":formMovilidades:t1 :formMovilidades:msgs"/>
                 <p:ajax event="rowEditCancel" listener="#{movilidadesController.onRowCancel}" />
                    
-                <p:column headerText="login" sortBy="#{movilidad.loginUsuario.login}" styleClass="login" filterBy="#{movilidad.loginUsuario.login}">
+                <p:column headerText="login" sortBy="#{movilidad.usuario.login}" styleClass="login" filterBy="#{movilidad.usuario.login}">
                     
-                    <h:outputText value="#{movilidad.loginUsuario.login}"/>
+                    <h:outputText value="#{movilidad.usuario.login}"/>
                 </p:column>
                 
                           
-                <p:column headerText="nombre" sortBy="#{movilidad.loginUsuario.nombre}" styleClass="nombre">
+                <p:column headerText="nombre" sortBy="#{movilidad.usuario.nombre}" styleClass="nombre">
                     
-                    <h:outputText value="#{movilidad.loginUsuario.nombre}"/>
+                    <h:outputText value="#{movilidad.usuario.nombre}"/>
                 </p:column>
                 
-                <p:column headerText="apellido" sortBy="#{movilidad.loginUsuario.apellido1}" filterBy="#{movilidad.loginUsuario.apellido1}" filterMatchMode="contains" styleClass="apellido1">
+                <p:column headerText="apellido" sortBy="#{movilidad.usuario.apellido1}" filterBy="#{movilidad.usuario.apellido1}" filterMatchMode="contains" styleClass="apellido1">
                     
-                    <h:outputText value="#{movilidad.loginUsuario.apellido1}"/>
+                    <h:outputText value="#{movilidad.usuario.apellido1}"/>
                 </p:column>
                 
-                <p:column headerText="Pais" filterBy="#{movilidad.nombreUniversidad.pais.nombre}" sortBy="#{movilidad.nombreUniversidad.pais.nombre}" styleClass="pais">
+                <p:column headerText="Pais" filterBy="#{movilidad.universidad.pais.nombre}" sortBy="#{movilidad.universidad.pais.nombre}" styleClass="pais">
                 
-                    <h:outputText value="#{movilidad.nombreUniversidad.pais.nombre}"/>
+                    <h:outputText value="#{movilidad.universidad.pais.nombre}"/>
                 
                 </p:column>
                 
-                <p:column headerText="destino" sortBy="#{movilidad.nombreUniversidad.nombre}" styleClass="universidad" filterBy="#{movilidad.nombreUniversidad.nombre}">
+                <p:column headerText="destino" sortBy="#{movilidad.universidad.nombre}" styleClass="universidad" filterBy="#{movilidad.universidad.nombre}">
                     
-                    <h:outputText value="#{movilidad.nombreUniversidad.nombre}"/>
+                    <h:outputText value="#{movilidad.universidad.nombre}"/>
                     
                 </p:column>
               
@@ -89,9 +89,9 @@
                 </p:column>
                 
                 
-                <p:column headerText="curso académico" sortBy="#{movilidad.cursoAcademico.cursoAcademico}" styleClass="cursoAcademico">
+                <p:column headerText="curso académico" sortBy="#{movilidad.cursoacademico.cursoAcademico}" styleClass="cursoAcademico">
                 
-                    <h:outputText value="#{movilidad.cursoAcademico.cursoAcademico}"/>
+                    <h:outputText value="#{movilidad.cursoacademico.cursoAcademico}"/>
                     
                 </p:column>
                 

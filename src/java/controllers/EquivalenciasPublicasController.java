@@ -221,12 +221,14 @@ public class EquivalenciasPublicasController implements Serializable{
     public String verContrato(){
          Movilidad m;
         Contrato c;
+        
         try{
         c=equivalenciaService.verContratoPorEquivalencia(selectedEquivalencia);
          m=equivalenciaService.buscarMovilidadPorContrato(c);
         }catch(ContratoNotFoundException|MovilidadNotFoundException|RuntimeException ex){
            beanUtilidades.creaMensaje("se ha producido un error", FacesMessage.SEVERITY_ERROR);
-            return "equivalenciasPublicasAdmin.xhtml";
+           ex.printStackTrace();
+            return null;
         }
       
         

@@ -100,7 +100,7 @@ public class EquivalenciasController implements Serializable{
            selectedContrato=equivalenciaService.findContrato(selectedContrato.getIdContrato());
            }catch(ContratoNotFoundException ex){
                try{
-            FacesContext.getCurrentInstance().getExternalContext().redirect(FacesContext.getCurrentInstance().getExternalContext().getRequestContextPath()+"/admin/verMovilidades.xhtml");
+            FacesContext.getCurrentInstance().getExternalContext().redirect(FacesContext.getCurrentInstance().getExternalContext().getRequestContextPath()+"/admin/error.xhtml");
             }catch(IOException ex2){
                     
                     }
@@ -408,7 +408,7 @@ public class EquivalenciasController implements Serializable{
         selectedContrato=equivalenciaService.findContrato(selectedContrato.getIdContrato());
         }catch(ContratoNotFoundException ex){
             try{
-            FacesContext.getCurrentInstance().getExternalContext().redirect(FacesContext.getCurrentInstance().getExternalContext().getRequestContextPath()+"/admin/verMovilidades.xhtml");
+            FacesContext.getCurrentInstance().getExternalContext().redirect(FacesContext.getCurrentInstance().getExternalContext().getRequestContextPath()+"/admin/error.xhtml");
             }catch(IOException ex2){
                     
                     }

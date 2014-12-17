@@ -27,7 +27,7 @@ import model.utils.beanUtilidades;
 
 @ManagedBean
 @ViewScoped
-public class MovilidadadesController implements Serializable{
+public class MovilidadesController implements Serializable{
 
    
     
@@ -43,7 +43,7 @@ public class MovilidadadesController implements Serializable{
   
     
     
-    public MovilidadadesController() {
+    public MovilidadesController() {
         
     }
     

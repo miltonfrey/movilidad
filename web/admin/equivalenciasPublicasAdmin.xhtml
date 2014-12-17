@@ -102,7 +102,7 @@
                    
                     
                    <p:column headerText="contrato" styleClass="verPublicaAdmin" >
-                       <p:commandButton value="ver contrato" action="#{equivalenciasPublicasController.verContrato}" ajax="true">
+                       <p:commandButton value="ver contrato" action="#{equivalenciasPublicasController.verContrato}" ajax="true" update=":formPais:msgs">
                            <f:setPropertyActionListener value="#{equivalencia}" target="#{equivalenciasPublicasController.selectedEquivalencia}"/>
                        </p:commandButton>
                        
