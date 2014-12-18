@@ -102,7 +102,7 @@ public class AutenticarUsuarioController implements Serializable{
              beanUtilidades.creaMensaje("login inexistente", FacesMessage.SEVERITY_ERROR);
               return null; 
              }
-             System.out.println("hola");
+             
              
             try{ 
             usuarioService.autenticarUsuario(password,u);
