@@ -1,6 +1,7 @@
 
 package model.utils;
 
+import entities.CorreoConf;
 import entities.Cursoacademico;
 import entities.Estado;
 import entities.EstadoMovilidad;
@@ -80,6 +81,19 @@ public class UtilidadServiceImpl implements UtilidadService,Serializable{
         sessionFactory.getCurrentSession().delete(c);
     }
     
+    @Override
+    public CorreoConf getCorreoConf(){
+        
+        
+        List<CorreoConf> l= sessionFactory.getCurrentSession().createQuery("select c from CorreoConf c").list();
+        return l.get(0);
+    }
+    
+    @Override
+    public void setCorreoConf(CorreoConf correoConf){
+        
+        sessionFactory.getCurrentSession().saveOrUpdate(correoConf);
+    }
     
     
 }

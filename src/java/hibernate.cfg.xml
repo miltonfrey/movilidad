@@ -21,5 +21,6 @@
     <mapping resource="entities/Equivalencia.hbm.xml"/>
     <mapping resource="entities/MiembroGrupoAsignaturaB.hbm.xml"/>
     <mapping resource="entities/Pais.hbm.xml"/>
+    <mapping resource="entities/CorreoConf.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

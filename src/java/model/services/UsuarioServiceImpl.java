@@ -7,6 +7,7 @@
 package model.services;
 
 
+import entities.CorreoConf;
 import entities.Usuario;
 import exceptions.PasswordIncorrectoException;
 import exceptions.UsuarioNotFoundException;
@@ -129,23 +130,28 @@ public class UsuarioServiceImpl implements UsuarioService{
     }
    
    @Override
-    public void enviarEmail(String login,String password) throws EmailException{
+    public void enviarEmail(String login,String password,CorreoConf correoConf) throws EmailException{
         
     
        
         String mensaje="La contraseña es "+password+"\n Puedes cambiarla en la aplicación\n se te pedirá esta constraseña para hacerlo";
         Email email = new SimpleEmail();
-        email.setHostName("smtp.googlemail.com");
+        //email.setHostName("smtp.googlemail.com");
         //email.setHostName("smtp.gmail.com");
-        email.setSmtpPort(465);
+        email.setHostName(correoConf.getHostName());
         
-        email.setAuthenticator(new DefaultAuthenticator("registroerasmus@gmail.com", "registrousers"));
+        //email.setSmtpPort(465);
+        email.setSmtpPort(correoConf.getSmtpPort());
+        //email.setAuthenticator(new DefaultAuthenticator("registroerasmus@gmail.com", "registrousers"));
+        email.setAuthenticator(new DefaultAuthenticator(correoConf.getDireccion(), correoConf.getPassword()));
         email.setSSLOnConnect(true);
-        email.setFrom("registro.erasmus@gmail.com");
+        //email.setFrom("registro.erasmus@gmail.com");
+        email.setFrom(correoConf.getDireccion());
         email.setSubject("Usuario creado");
         email.setMsg(mensaje);
-        email.addTo(login+"@udc.es");
+        email.addTo(login+"@"+correoConf.getAddTo());
         //email.setTLS(true);
+        
         email.send();
         
         

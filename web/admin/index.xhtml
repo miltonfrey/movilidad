@@ -18,11 +18,11 @@
           
             
             
-               
-            
-                <h:outputLink value="#{request.contextPath}/supervision/crearAdmin.xhtml" rendered="#{autenticarUsuarioController.user.tipoUsuario eq 0}">Crear tutor</h:outputLink>
-            
-                <h:outputLink value="listaUsuarios.xhtml" rendered="#{autenticarUsuarioController.user.tipoUsuario eq 0}">Lista de usuarios</h:outputLink>
+             <h:outputLink value="#{request.contextPath}/supervision/configuracionCorreo.xhtml" rendered="#{autenticarUsuarioController.user.tipoUsuario eq 0}">Configuración de correo</h:outputLink>
+
+             <h:outputLink value="#{request.contextPath}/supervision/crearAdmin.xhtml" rendered="#{autenticarUsuarioController.user.tipoUsuario eq 0}">Crear tutor</h:outputLink>
+                
+             <h:outputLink value="listaUsuarios.xhtml">Lista de usuarios</h:outputLink>
             
             <h:outputLink value="crearPais.xhtml">Paises</h:outputLink>
             

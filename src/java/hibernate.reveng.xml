@@ -16,4 +16,5 @@
   <table-filter match-name="equivalencia"/>
   <table-filter match-name="cursoacademico"/>
   <table-filter match-name="miembro_grupo_asignatura_b"/>
+  <table-filter match-name="correo_conf"/>
 </hibernate-reverse-engineering>

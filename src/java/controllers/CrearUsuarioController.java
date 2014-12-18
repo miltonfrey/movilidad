@@ -1,5 +1,6 @@
 package controllers;
 
+import entities.CorreoConf;
 import entities.Mensaje;
 import entities.Usuario;
 import exceptions.UsuarioNotFoundException;
@@ -183,8 +184,8 @@ public class CrearUsuarioController implements Serializable{
             
                 }
        try{
-            
-            usuarioService.enviarEmail(login,password);
+            CorreoConf correoConf=beanUtilidades.getCorreoConf();
+            usuarioService.enviarEmail(login,password,correoConf);
             
         }catch(EmailException ex){
             

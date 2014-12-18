@@ -6,11 +6,13 @@
 package model.utils;
 
 
+import entities.CorreoConf;
 import entities.Cursoacademico;
 import entities.Estado;
 import entities.EstadoMovilidad;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -234,7 +236,25 @@ public class beanUtilidades implements Serializable{
         return null;
     }
         
+    public CorreoConf getCorreoConf(){
+        
+        
+        String direccion=ResourceBundle.getBundle("/Config").getString("Direccion");
+        String password=ResourceBundle.getBundle("/Config").getString("Password");
+        String smtpPort=ResourceBundle.getBundle("/Config").getString("SmtpPort");
+        String hostName=ResourceBundle.getBundle("/Config").getString("HostName");
+        String addTo=ResourceBundle.getBundle("/Config").getString("AddTo");
+        Integer i=Integer.parseInt(smtpPort);
+        Short s=i.shortValue();
+        CorreoConf correoConf=new CorreoConf(direccion, password, s, hostName, addTo);
+        return correoConf;
+        
+    }
     
+    public void setCorreoConf(CorreoConf correoConf){
+        
+        utilidadService.setCorreoConf(correoConf);
+    }
         
     
     

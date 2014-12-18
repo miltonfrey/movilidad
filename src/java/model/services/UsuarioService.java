@@ -6,6 +6,7 @@
 
 package model.services;
 
+import entities.CorreoConf;
 import entities.Usuario;
 import exceptions.PasswordIncorrectoException;
 import exceptions.UsuarioNotFoundException;
@@ -25,5 +26,5 @@ public interface UsuarioService {
     public String md5Password(String password);
     public void autenticarUsuario(String password,Usuario u) throws PasswordIncorrectoException;
     public String generarPassword();
-     public void enviarEmail(String login,String password) throws EmailException;
+     public void enviarEmail(String login,String password,CorreoConf correoConf) throws EmailException;
 }
