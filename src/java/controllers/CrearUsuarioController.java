@@ -188,7 +188,7 @@ public class CrearUsuarioController implements Serializable{
             usuarioService.enviarEmail(login,password,correoConf);
             
         }catch(EmailException ex){
-            
+            ex.printStackTrace();
             usuarioService.delete(u);
             beanUtilidades.creaMensaje("se ha producido un error", FacesMessage.SEVERITY_ERROR);
             return null;

@@ -94,7 +94,7 @@ public class UtilidadServiceImpl implements UtilidadService,Serializable{
     @Override
     public void setCorreoConf(CorreoConf correoConf){
         
-        sessionFactory.getCurrentSession().saveOrUpdate(correoConf);
+        sessionFactory.getCurrentSession().update(correoConf);
     }
     
     
