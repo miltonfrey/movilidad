@@ -86,6 +86,8 @@ public class UtilidadServiceImpl implements UtilidadService,Serializable{
         
         
         List<CorreoConf> l= sessionFactory.getCurrentSession().createQuery("select c from CorreoConf c").list();
+        if(l.isEmpty())
+            return new CorreoConf();
         return l.get(0);
     }
     

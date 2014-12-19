@@ -10,6 +10,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import model.services.UsuarioService;
+import model.utils.Encrypter;
 import model.utils.beanUtilidades;
 import org.apache.commons.configuration.ConfigurationException;
 
@@ -68,11 +69,12 @@ public class ConfiguracionCorreoController implements Serializable{
     
     public String editarConfiguracion(){
     
-        correoConf.setPassword(usuarioService.md5Password(correoConf.getPassword()));
+        
         
     try{    
+    correoConf.setPassword(Encrypter.encrypt(correoConf.getPassword()));
     beanUtilidades.setCorreoConf(correoConf);
-    }catch(ConfigurationException|RuntimeException ex){
+    }catch(Exception ex){
         ex.printStackTrace();
         beanUtilidades.creaMensaje("se ha producido un error", FacesMessage.SEVERITY_ERROR);
     }

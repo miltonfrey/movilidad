@@ -10,8 +10,6 @@ import entities.CorreoConf;
 import entities.Cursoacademico;
 import entities.Estado;
 import entities.EstadoMovilidad;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -241,34 +239,22 @@ public class beanUtilidades implements Serializable{
     }
         
     public CorreoConf getCorreoConf(){
-        //CorreoConf correoConf=utilidadService.getCorreoConf();
         
-        String direccion=ResourceBundle.getBundle("/Config").getString("Direccion");
-        String password=ResourceBundle.getBundle("/Config").getString("Password");
-        String smtpPort=ResourceBundle.getBundle("/Config").getString("SmtpPort");
-        String hostName=ResourceBundle.getBundle("/Config").getString("HostName");
-        String addTo=ResourceBundle.getBundle("/Config").getString("AddTo");
-        Integer i=Integer.parseInt(smtpPort);
-        Short s=i.shortValue();
-        CorreoConf correoConf=new CorreoConf(direccion, password, s, hostName, addTo);
+        CorreoConf correoConf=utilidadService.getCorreoConf();
+        try{
+        correoConf.setPassword(Encrypter.decrypt(correoConf.getPassword()));
+        }catch(Exception ex){
+            
+        }
         return correoConf;
-     
     }
     
         
     
     public void setCorreoConf(CorreoConf correoConf) throws ConfigurationException{
         
-       // utilidadService.setCorreoConf(correoConf);
+        utilidadService.setCorreoConf(correoConf);
         
-        PropertiesConfiguration config=new PropertiesConfiguration("/Config.properties");
-        config.setProperty("Direccion",correoConf.getDireccion() );
-        System.out.println(correoConf.getDireccion());
-        config.setProperty("Password", correoConf.getPassword());
-        config.setProperty("SmtpPort", correoConf.getSmtpPort());
-        config.setProperty("HostName", correoConf.getHostName());
-        config.setProperty("AddTo", correoConf.getAddTo());
-        config.save();
     }
         
     
