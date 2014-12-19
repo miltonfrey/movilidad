@@ -2,6 +2,8 @@
 package controllers;
 
 import entities.CorreoConf;
+import java.io.IOException;
+import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -9,11 +11,12 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import model.services.UsuarioService;
 import model.utils.beanUtilidades;
+import org.apache.commons.configuration.ConfigurationException;
 
 
 @ManagedBean
 @ViewScoped
-public class ConfiguracionCorreoController {
+public class ConfiguracionCorreoController implements Serializable{
 
     @ManagedProperty (value="#{beanUtilidades}")
     private beanUtilidades beanUtilidades;
@@ -69,8 +72,8 @@ public class ConfiguracionCorreoController {
         
     try{    
     beanUtilidades.setCorreoConf(correoConf);
-    }catch(RuntimeException ex){
-        
+    }catch(ConfigurationException|RuntimeException ex){
+        ex.printStackTrace();
         beanUtilidades.creaMensaje("se ha producido un error", FacesMessage.SEVERITY_ERROR);
     }
     

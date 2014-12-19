@@ -10,6 +10,8 @@ import entities.CorreoConf;
 import entities.Cursoacademico;
 import entities.Estado;
 import entities.EstadoMovilidad;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -21,6 +23,8 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration.PropertiesConfiguration;
 
 
 
@@ -237,7 +241,7 @@ public class beanUtilidades implements Serializable{
     }
         
     public CorreoConf getCorreoConf(){
-        
+        //CorreoConf correoConf=utilidadService.getCorreoConf();
         
         String direccion=ResourceBundle.getBundle("/Config").getString("Direccion");
         String password=ResourceBundle.getBundle("/Config").getString("Password");
@@ -248,12 +252,23 @@ public class beanUtilidades implements Serializable{
         Short s=i.shortValue();
         CorreoConf correoConf=new CorreoConf(direccion, password, s, hostName, addTo);
         return correoConf;
-        
+     
     }
     
-    public void setCorreoConf(CorreoConf correoConf){
         
-        utilidadService.setCorreoConf(correoConf);
+    
+    public void setCorreoConf(CorreoConf correoConf) throws ConfigurationException{
+        
+       // utilidadService.setCorreoConf(correoConf);
+        
+        PropertiesConfiguration config=new PropertiesConfiguration("/Config.properties");
+        config.setProperty("Direccion",correoConf.getDireccion() );
+        System.out.println(correoConf.getDireccion());
+        config.setProperty("Password", correoConf.getPassword());
+        config.setProperty("SmtpPort", correoConf.getSmtpPort());
+        config.setProperty("HostName", correoConf.getHostName());
+        config.setProperty("AddTo", correoConf.getAddTo());
+        config.save();
     }
         
     
